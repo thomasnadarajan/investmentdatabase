@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const connectionString = 'mongodb+srv://yoda:12345@cluster0.q1ybi.mongodb.net/investments?retryWrites=true&w=majority'
+const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true}))
 app.set('view engine', 'ejs')
 MongoClient.connect(connectionString,{
@@ -27,7 +28,7 @@ MongoClient.connect(connectionString,{
       })
   })
 
-app.listen(3000, function() {
+app.listen(port, function() {
     console.log('listening on port 3000')
 })
 
