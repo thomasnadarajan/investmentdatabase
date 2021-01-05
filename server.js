@@ -39,6 +39,7 @@ app.get('/confirm', function (request, response) {
     response.sendFile(__dirname + '/confirm.html')
 })
 
+
 app.get('/validation.js', function (request, response) {
     response.sendFile(__dirname + '/validation.js')
 })
