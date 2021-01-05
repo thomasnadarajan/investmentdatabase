@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<title> Investment </title>
+<body>
+<a href="/entries">Check current applications.</a>
+<h1>Please enter your details.</h1>
+<form action="/data" method="POST" id = "data" onsubmit="return checks()">
+    <script type="text/javascript" src="validation.js"></script>
+    <p>Name:</p><input type = "text" placeholder="Given Name" name="first_name">
+    <input type = "text" placeholder="Surname" name="surname">
+    <p>Date of Birth:</p>
+    <input type="date" name = "dob">
+    <p>Email:</p>
+    <input type="text" placeholder="Email Address" name="email">
+    <p>Phone Number:</p>
+    <input type="tel" placeholder="Phone Number" name="num">
+    <p>Choose an investment option:</p>
+    <script>
+        function showHide() {
+            var select = document.getElementById("select")
+            if (select.checked == true) {
+                document.getElementById("descriptor_prem").style.display = "none"
+                document.getElementById("descriptor_select").style.display = "block"
+            }
+            else {
+                document.getElementById("descriptor_select").style.display = "none"
+                document.getElementById("descriptor_prem").style.display = "block"
+            }
+        }
+    </script>
+    <input type="radio" id="select" name="opt" value="select" onclick = "showHide()">
+    <label for="select">Select </label><br>
+    <b id = "descriptor_select" style="display: none;">Minimum Investment of $25,000 and Maximum Investment of $250,000</b>
+    <input type="radio" id="prem" name="opt" value="prem" onclick = "showHide()">
+    <label for="prem">Premium</label><br>
+    <b id = "descriptor_prem" style= "display: none;">Minimum Investment of $10,000 and Maximum Investment of $250,000</b>
+    <p>Enter your investment amount:</p>
+    <label for = "amount">$</label>
+    <input id="amount" type="number" name="amount">
+    <input type = "submit" value = "Submit">
+</form><br>
+<p id = "feedback" style="display: none;">Feedback</p>
+</body>
+</html>
